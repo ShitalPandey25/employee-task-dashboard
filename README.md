@@ -1,16 +1,38 @@
-# React + Vite
+Employee Task Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple task management web app built using React.
+It helps users to manage daily tasks easily by adding, editing, deleting, and tracking tasks.
 
-Currently, two official plugins are available:
+Live Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+You can view the live project here:
+https://employee-task-dashboard-liard.vercel.app/
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+ Features 
 
-## Expanding the ESLint configuration
+- Add new tasks
+- Edit existing tasks
+- Delete tasks
+- Mark tasks as completed
+- Search tasks by title
+- Filter tasks (All, Completed, Pending, High Priority)
+- Shows task details like priority, status, and due date
+- Dark mode and light mode support
+- Fully responsive (works on mobile and laptop)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Technologies Used:
+
+- React.js
+- JavaScript
+- HTML
+- CSS
+- Vite
+- LocalStorage (for saving tasks)
+
+
+ How to Run Project Locally
+
+1. Download or clone this repository
+2. Open in VS Code
+3. Install dependencies: npm install
