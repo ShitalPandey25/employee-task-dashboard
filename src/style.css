@@ -80,7 +80,7 @@ button:hover {
     margin: 10px 0;
   }
 }
-/* LIGHT MODE (default) */
+
 .app {
   background-color: #ffffff;
   color: #111111;
@@ -88,7 +88,6 @@ button:hover {
   transition: all 0.3s ease;
 }
 
-/* DARK MODE */
 .dark {
   background-color: #121212;
   color: #f5f5f5;
@@ -96,7 +95,6 @@ button:hover {
   transition: all 0.3s ease;
 }
 
-/* Optional: Card styling */
 .card {
   background-color: #f9f9f9;
   color: #111;
@@ -105,13 +103,13 @@ button:hover {
   transition: all 0.3s ease;
 }
 
-/* Dark mode cards */
+
 .dark .card {
   background-color: #1e1e1e;
   color: #f5f5f5;
 }
 
-/* Buttons */
+
 button {
   padding: 8px 12px;
   border: none;
@@ -125,7 +123,7 @@ button {
   color: white;
 }
 
-/* Links */
+
 a {
   color: #007bff;
 }
@@ -134,9 +132,7 @@ a {
   color: #4da3ff;
 }
 
-/* =========================
-   DASHBOARD TEXT FIX
-========================= */
+
 .dark h1,
 .dark h2,
 .dark h3,
@@ -145,9 +141,7 @@ a {
   color: #f1f1f1;
 }
 
-/* =========================
-   TASK CARD LIGHT MODE
-========================= */
+
 .task-card {
   background: white;
   color: black;
@@ -157,26 +151,148 @@ a {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* =========================
-   TASK CARD DARK MODE FIX
-========================= */
+
 .dark .task-card {
   background: #1e1e1e;
   color: #f1f1f1;
 }
 
-/* Force ALL text inside task card */
+
 .dark .task-card * {
   color: #f1f1f1 !important;
 }
 
-/* =========================
-   INPUT + SELECT DARK FIX
-========================= */
+
 .dark input,
 .dark select,
 .dark textarea {
   background: #2a2a2a;
   color: #fff;
   border: 1px solid #444;
+}
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #fff;
+  color: #222;
+  padding: 24px 28px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-title { margin: 0 0 10px; }
+.modal-title.success { color: #16a34a; }
+.modal-title.danger { color: #dc2626; }
+.modal-title.error { color: #dc2626; }
+
+.modal-message { margin: 0 0 20px; }
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-btn.cancel { background: #e5e7eb; color: #222; }
+.modal-btn.confirm { background: #2563eb; color: #fff; }
+.modal-btn.confirm.success { background: #16a34a; }
+.modal-btn.confirm.danger { background: #dc2626; }
+.modal-btn.confirm.error { background: #dc2626; }
+
+/* ---------- Equal size for all form fields ---------- */
+input,
+select,
+textarea {
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* ---------- Dark mode popup ---------- */
+.dark .modal-box {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #333;
+}
+
+.dark .modal-box .modal-message {
+  color: #d1d5db;
+}
+
+.dark .modal-btn.cancel {
+  background: #374151;
+  color: #f1f1f1;
+}
+
+/* Keep the coloured buttons readable in dark mode */
+.dark .modal-btn.confirm {
+  color: #fff;
+}
+
+.dark .modal-btn.confirm.danger,
+.dark .modal-btn.confirm.error {
+  background: #dc2626;
+}
+
+.dark .modal-btn.confirm.success {
+  background: #16a34a;
+}
+
+.dark .modal-btn.confirm.info {
+  background: #2563eb;
+}
+
+/* ---------- Task grid: 3 per row ---------- */
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.task-grid .task-card {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.task-grid .task-card button {
+  margin-top: 6px;
+}
+
+/* Tablet: 2 per row */
+@media (max-width: 1024px) {
+  .task-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Phone: 1 per row */
+@media (max-width: 640px) {
+  .task-grid {
+    grid-template-columns: 1fr;
+  }
 }
